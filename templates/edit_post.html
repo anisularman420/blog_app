@@ -1,0 +1,16 @@
+<!-- blog_app/templates/edit_post.html -->
+
+{% extends 'layout.html' %}
+
+{% block title %}Add/Edit Post{% endblock %}
+
+{% block content %}
+    <h2>{{ action }} Post</h2>
+    <form method="post" action="{{ form_action }}">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="{{ post.title }}" required>
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" required>{{ post.content }}</textarea>
+        <button type="submit">{{ action }} Post</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+<!-- blog_app/templates/index.html -->
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Latest Posts</h2>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>
+                - {{ post.published_date }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
