@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}Delete Post{% endblock %}
+
+{% block content %}
+    <h2>Delete Post</h2>
+    <p>Are you sure you want to delete the post "{{ post.title }}"?</p>
+    <form method="post" action="{{ url_for('delete_post', post_id=post.id) }}">
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{{ url_for('dashboard') }}">Cancel</a>
+{% endblock %}
